@@ -1,5 +1,5 @@
 minerals = {
-    "Quantanium": 88.0,
+    "Quantainium": 88.0,
     "Bexalite": 40.66,
     "Taranite": 32.58,
     "Borase": 32.58,
