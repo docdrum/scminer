@@ -1,23 +1,6 @@
 import PySimpleGUI as sg
 
-minerals = {
-    "Quantanium": 88.0,
-    "Bexalite": 40.66,
-    "Taranite": 32.58,
-    "Borase": 32.58,
-    "Laranite": 31.02,
-    "Agricium": 27.50,
-    "Hephaestanite": 14.76,
-    "Titanium": 8.94,
-    "Diamond": 7.36,
-    "Gold": 6.4,
-    "Copper": 5.74,
-    "Beryl": 4.42,
-    "Tungsten": 4.1,
-    "Corundum": 2.7,
-    "Quartz": 1.56,
-    "Aluminium": 1.34
-}
+import constdata as cd
 
 mass_row = [
     sg.Text("Mass"),
@@ -29,7 +12,7 @@ mineral_percentage_row = [
     sg.In(enable_events=True, key="-PERCENT-")
 ]
 
-mineral_names = tuple(minerals.keys())
+mineral_names = tuple(cd.minerals.keys())
 mineral_row = [
     sg.Text("Mineral"),
     sg.Listbox(mineral_names, enable_events=True, size=(len(mineral_names),len(mineral_names)), key="-MINERAL-", default_values="Quantainium")
@@ -75,7 +58,7 @@ while True:
         window["-MASS-OUT-"].update(mineral_mass)
         mineral_value = 0
         try:
-            mineral_value = minerals[values["-MINERAL-"][0]]
+            mineral_value = cd.minerals[values["-MINERAL-"][0]]
         except KeyError:
             pass
         window["-VALUE-OUT-"].update(mineral_value * mineral_mass)
