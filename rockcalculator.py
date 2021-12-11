@@ -13,9 +13,11 @@ mineral_percentage_row = [
 ]
 
 mineral_names = tuple(cd.minerals.keys())
+num_minerals = len(mineral_names)
 mineral_row = [
     sg.Text("Mineral"),
-    sg.Listbox(mineral_names, enable_events=True, size=(len(mineral_names),len(mineral_names)), key="-MINERAL-", default_values="Quantainium")
+    sg.Listbox(mineral_names, enable_events=True, size=(num_minerals, num_minerals),
+        key="-MINERAL-", default_values="Quantainium")
 ]
 
 mineral_mass_row = [
