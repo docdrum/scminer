@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 
 import constdata as cd
+from scminerdb import DB
 
 class RockCalculator:
     def show(self):
@@ -71,3 +72,4 @@ class RockCalculator:
 
 rc = RockCalculator()
 rc.show()
+db = DB()
